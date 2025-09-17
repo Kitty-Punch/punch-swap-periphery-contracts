@@ -14,18 +14,17 @@ import {PunchSwapV2Router02} from "../src/PunchSwapV2Router02.sol";
 */
 contract PunchSwapV2Router02DeployScript is Script, Consts {
     function run() public {
-        uint256 deployerPrivateKey = vm.envUint(PARAM_PK_ACCOUNT);
-        address _owner = vm.envAddress(PARAM_OWNER);
-        address _factory = address(0x0);
-        address _wflow = address(0x0);
+        address _owner = address(0xcd05082a302b70c96fc83B95775a1CA753d9A789);
+        address _factory = address(0x334D111D0610BBED6D16F1F4007246F8d4A75e22);
+        address _wflow = address(0x9EDCde0257F2386Ce177C3a7FCdd97787F0D841d);
 
         console.log("Owner address:     ", _owner);
         console.log("Factory address:   ", _factory);
         console.log("WFLOW address:      ", _wflow);
-        require(false, "Was hex'VALUE' in PunchSwapV2Library.pairFor(address factory, address tokenA, address tokenB) updated?");
+        require(true, "Was hex'VALUE' in PunchSwapV2Library.pairFor(address factory, address tokenA, address tokenB) updated?");
 
         console.log("Starting script: broadcasting");
-        vm.startBroadcast(deployerPrivateKey);
+        vm.startBroadcast();
 
         PunchSwapV2Router02 instance = new PunchSwapV2Router02(_factory, _wflow);
 
