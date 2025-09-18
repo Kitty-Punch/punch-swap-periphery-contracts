@@ -1,7 +1,10 @@
 [profile.default]
 src = "src"
 libs = ["lib"]
-solc = "0.8.18"
+solc = "0.8.28"
+optimizer = true
+optimizer_runs = 200
+via_ir = false
 evm_version = "paris"
 
 ffi = true     # to enable vyperDeployer calling vyper compiler
@@ -10,6 +13,7 @@ is_system = false # Note: NonceHolder and the ContractDeployer system contracts 
 mode = "3"
 
 [profile.default.zksync]
+zksolc = "1.5.15"
 enable_eravm_extensions = true # Note: System contract calls (NonceHolder and ContractDeployer) can only be called with this set to true
 
 # Update Slither/Mythrill config files and GH actions when you update the dependencies:
@@ -33,6 +37,7 @@ avax_mainnet = "${AVAX_MAINNET_RPC_URL}"
 ftm_mainnet = "${FTM_MAINNET_RPC_URL}"
 base_mainnet = "${BASE_MAINNET_RPC_URL}"
 zksync_mainnet = "${ZKSYNC_MAINNET_RPC_URL}"
+abs_testnet = "https://api.testnet.abs.xyz"
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
 

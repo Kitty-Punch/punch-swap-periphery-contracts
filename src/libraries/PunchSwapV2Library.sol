@@ -17,13 +17,21 @@ library PunchSwapV2Library {
     // calculates the CREATE2 address for a pair without making any external calls
     function pairFor(address factory, address tokenA, address tokenB) internal pure returns (address pair) {
         (address token0, address token1) = sortTokens(tokenA, tokenB);
-        pair = address(uint160(uint(keccak256(abi.encodePacked(
-                bytes32(0x2020dba91b30cc0006188af794c2fb30dd8520db7e2c088b7fc7c103c00ca494), // keccak256("zksyncCreate2")
-                bytes32(uint256(uint160(factory))), // sender
-                keccak256(abi.encodePacked(token0, token1)), // salt
-                hex'b6420a9f56ea6b836063946440d87c53e58e061507ccff2587025354eb280a89', // init code hash
-                bytes32(0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470) // constructor input hash: keccak256("")
-            )))));
+        pair = address(
+            uint160(
+                uint256(
+                    keccak256(
+                        abi.encodePacked(
+                            bytes32(0x2020dba91b30cc0006188af794c2fb30dd8520db7e2c088b7fc7c103c00ca494), // keccak256("zksyncCreate2")
+                            bytes32(uint256(uint160(factory))), // sender
+                            keccak256(abi.encodePacked(token0, token1)), // salt
+                            hex'010000d1e4e7cbc8f0dfcf1f0f7ec8c2f12ece12f8552d2fca8af8c0419a9265', // init code hash
+                            bytes32(0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470) // constructor input hash: keccak256("")
+                        )
+                    )
+                )
+            )
+        );
     }
 
     // fetches and sorts the reserves for a pair
