@@ -12,7 +12,7 @@ contract PunchSwapV2RouterAddLiquidityForkTest is ForkBaseTest {
     address public constant WETH = address(0x9EDCde0257F2386Ce177C3a7FCdd97787F0D841d);
     address public constant USDC = address(0xe4C7fBB0a626ed208021ccabA6Be1566905E2dFc);
     // address payable public constant V2_ROUTER = payable(address());
-    address public constant V2_FACTORY = address(0x22650445c3A0c36D0bDCC8F4CA31Ae39C2Ab1bE7);
+    address public constant V2_FACTORY = address(0x4b83c3cd51C6D48D7DCF191ad846C34025E2Bc65);
     uint256 public constant ONE_SHARE = 1e18;
 
     PunchSwapV2Router02 public v2Router;

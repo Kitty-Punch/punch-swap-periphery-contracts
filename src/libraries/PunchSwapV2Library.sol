@@ -25,7 +25,7 @@ library PunchSwapV2Library {
                             bytes32(0x2020dba91b30cc0006188af794c2fb30dd8520db7e2c088b7fc7c103c00ca494), // keccak256("zksyncCreate2")
                             bytes32(uint256(uint160(factory))), // sender
                             keccak256(abi.encodePacked(token0, token1)), // salt
-                            hex'010000d1e4e7cbc8f0dfcf1f0f7ec8c2f12ece12f8552d2fca8af8c0419a9265', // init code hash
+                            hex'010003c5d511518b9fada8859c668af8e208f2828fd7eff32f2af6f3f0bbcd50', // init code hash
                             bytes32(0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470) // constructor input hash: keccak256("")
                         )
                     )
